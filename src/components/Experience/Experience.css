@@ -1,0 +1,46 @@
+.gradient-bg::before {
+    background: linear-gradient(to right, #a4c7fe, #06B6D4);
+  }
+  .highlight {
+    position: relative;
+    background: linear-gradient(to right, #3B82F6, #06B6D4);
+    border-radius: var(--mantine-radius-sm);
+    padding: 2px  7px;
+    color: white;
+
+  }
+  .font-ed{
+    color:#228be6;
+  }
+  .Titless{
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+    font-size: rem(44px);
+    line-height: 1.2;
+    font-weight: 900;
+  
+    @media (max-width: 36em) {
+      font-size: rem(28px);
+    }
+  }
+ .dsd{
+  background-color: white;
+ }
+ .dsds{
+  background-color: white;
+
+ }
+ /* Experience.css */
+.vertical-timeline {
+  
+}
+.blur{
+  background-color: #dbeafe; /* Equivalent to bg-blue-100 */
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  filter: blur(500px);
+  top: 140%;
+}

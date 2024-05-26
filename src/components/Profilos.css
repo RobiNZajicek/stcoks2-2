@@ -1,0 +1,23 @@
+.p-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-rigth{
+    display: flex;
+    flex-direction: column;
+}
+.p{
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    gap: 5px;
+}
+.text-1{
+
+}
+.text-2{
+    color: grey;
+    font-size: 12px;
+    margin-top: -3px;
+}
