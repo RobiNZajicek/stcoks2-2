@@ -5,7 +5,7 @@ import Logo from '../../assets/logo.png'
 import Lottie from 'lottie-react';
 import ITsos from '../../assets/Animation - 1716591462518.json' 
 const Profile = () => {
-  const [user, setUser] = useState({ fullname: '', email: '', name: '', lastname: '', money: '', userName: '',phoneNumber:'' });
+  const [user, setUser] = useState({ fullname: '', email: '', name: '', lastname: '', money: '', userName: '',phoneNumber:'',gender:'' });
 
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
@@ -21,9 +21,10 @@ const Profile = () => {
     const money = query.get('money');
     const userName = query.get('userName');
     const phoneNumber = query.get('phoneNumber');
+    const gender = query.get('gender');
 
-    if (fullname || email || name || lastname || money || userName || phoneNumber) {
-      setUser({ fullname, email, name, lastname, money, userName , phoneNumber});
+    if (fullname || email || name || lastname || money || userName || phoneNumber ||  gender ) {
+      setUser({ fullname, email, name, lastname, money, userName , phoneNumber, gender });
     }
   }, [query]);
 
@@ -102,7 +103,7 @@ const Profile = () => {
               <h1 className="label">E-mail:</h1>
               <span   style={{fontSize:'14px',fontWeight:400}} className="info">{user.email}</span>
             </li>
-          <h1 className="heading">Achievements</h1>
+          <h1 style={{marginBottom:'4rem'}} className="heading">Achievements</h1>
           <div>
             
           </div>
@@ -172,8 +173,8 @@ const Profile = () => {
            
 
             <li className="ssas">
-              <h1 className="label">E-mail:</h1>
-              <span className="info">{user.email}</span>
+              <h1 className="label">Gender :</h1>
+              <span className="info">{user.gender}</span>
             </li>
 
             

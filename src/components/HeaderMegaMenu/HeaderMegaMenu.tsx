@@ -29,7 +29,7 @@ import {
   IconCoin,
   IconChevronDown,
 } from '@tabler/icons-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import classes from './HeaderMegaMenu.module.css';
 
 const mockdata = [
@@ -93,6 +93,8 @@ export function HeaderMegaMenu() {
     lastname: '',
     money: '',
     userName: '',
+    phoneNumber:'',
+    gender:"",
     image: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-5.png',
   });
 
@@ -105,6 +107,8 @@ export function HeaderMegaMenu() {
     const lastname = query.get('lastname');
     const money = query.get('money');
     const userName = query.get('userName');
+    const phoneNumber = query.get('phoneNumber');
+    const gender = query.get('gender');
 
     setUserK((prevUserK) => ({
       ...prevUserK,
@@ -114,6 +118,8 @@ export function HeaderMegaMenu() {
       lastname: lastname || prevUserK.lastname,
       money: money || prevUserK.money,
       userName: userName || prevUserK.userName,
+      phoneNumber:phoneNumber || prevUserK.phoneNumber,
+      gender: gender || prevUserK.gender
     }));
   }, [query]);
 
@@ -149,7 +155,7 @@ export function HeaderMegaMenu() {
     <Link
       to={{
         pathname: collection.labelos,
-        search: `?fullname=${userK.fullname}&email=${userK.email}&name=${userK.name}&lastname=${userK.lastname}&money=${userK.money}&userName=${userK.userName}`,
+        search: `?fullname=${userK.fullname}&email=${userK.email}&name=${userK.name}&lastname=${userK.lastname}&money=${userK.money}&userName=${userK.userName},&phoneNumber=${userK.phoneNumber},&gender=${userK.gender}`,
       }}
       key={collection.label}
       className={classes.collectionLink}
@@ -171,9 +177,10 @@ export function HeaderMegaMenu() {
                 
                   <Center inline>
                   <div className={classes.collections}>{collectionLinks}</div>
-                    <Box className={classes.collectionLink}  component="span" >
+                  <Link to="Shop"><Box className={classes.collectionLink}  component="span" >
                       About Project
-                    </Box>
+                    </Box></Link>
+                    
                     <IconChevronDown
                       style={{ width: rem(16), height: rem(16) }}
                       color={theme.colors.blue[6]}
