@@ -506,7 +506,7 @@ case "WMT":
   return companyDetails;
 };
 // Function to generate mock historical data based on the symbol
-const generateMockHistoricalData = (symbol: string) => {
+const generateMockHistoricalData = (symbol) => {
   const prices = [];
   const basePrice = Math.floor(Math.random() * 200) + 100;
   
@@ -514,10 +514,100 @@ const generateMockHistoricalData = (symbol: string) => {
   let priceMultiplier = 1;
   switch(symbol) {
     case "AAPL":
-      priceMultiplier = 5;
+      priceMultiplier = 4;
       break;
     case "MSFT":
       priceMultiplier = 3;
+      break;
+    case "GOOGL":
+      priceMultiplier = 5;
+      break;
+    case "AMZN":
+      priceMultiplier = 6;
+      break;
+    case "TSLA":
+      priceMultiplier = 7;
+      break;
+    case "FB":
+      priceMultiplier = 2.5;
+      break;
+    case "GOOG":
+      priceMultiplier = 5;
+      break;
+    case "JNJ":
+      priceMultiplier = 2;
+      break;
+    case "META":
+      priceMultiplier = 2.5;
+      break;
+    case "V":
+      priceMultiplier = 2.2;
+      break;
+    case "MA":
+      priceMultiplier = 2.3;
+      break;
+    case "WMT":
+      priceMultiplier = 1.8;
+      break;
+    case "UNH":
+      priceMultiplier = 2.5;
+      break;
+    case "PG":
+      priceMultiplier = 2;
+      break;
+    case "KO":
+      priceMultiplier = 1.5;
+      break;
+    case "PEP":
+      priceMultiplier = 1.7;
+      break;
+    case "LLY":
+      priceMultiplier = 2.2;
+      break;
+    case "DECK":
+      priceMultiplier = 1.6;
+      break;
+    case "GE":
+      priceMultiplier = 1.2;
+      break;
+    case "HWM":
+      priceMultiplier = 1.3;
+      break;
+    case "NEE":
+      priceMultiplier = 2.3;
+      break;
+    case "NFLX":
+      priceMultiplier = 3.5;
+      break;
+    case "DIS":
+      priceMultiplier = 2;
+      break;
+    case "CRM":
+      priceMultiplier = 2.2;
+      break;
+    case "BAC":
+      priceMultiplier = 1.5;
+      break;
+    case "JPM":
+      priceMultiplier = 1.8;
+      break;
+    case "HD":
+      priceMultiplier = 2;
+      break;
+    case "BA":
+      priceMultiplier = 1.5;
+      break;
+    case "SBUX":
+      priceMultiplier = 1.7;
+      break;
+    case "CSCO":
+      priceMultiplier = 1.6;
+      break;
+    case "ADBE":
+      priceMultiplier = 2.3;
+      break;
+    case "PYPL":
+      priceMultiplier = 2.2;
       break;
     // Add more cases for other companies as needed
     default:

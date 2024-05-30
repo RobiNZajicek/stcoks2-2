@@ -6,7 +6,7 @@ import Lottie from 'lottie-react';
 import ITsos from '../../assets/Animation - 1716591462518.json' 
 const Profile = () => {
   const [user, setUser] = useState({ fullname: '', email: '', name: '', lastname: '', money: '', userName: '',phoneNumber:'',gender:'' });
-
+  
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
@@ -27,7 +27,7 @@ const Profile = () => {
       setUser({ fullname, email, name, lastname, money, userName , phoneNumber, gender });
     }
   }, [query]);
-
+ 
   return (
   
     <div id='profile-container' className="containerk">
@@ -52,23 +52,20 @@ const Profile = () => {
 
       <section className="work_skills card">
         <div className="work">
+          
           <h1 className="headingos">Stock</h1>
-          <div className="primary">
-            <h1>Microsoft</h1>
-            <span>Price</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos in doloribus obcaecati sit laudantium cum earum.</p>
-          </div>
-
-          <div className="secondary">
-            <h1>Apple </h1>
-            <span>Price</span>
-            <p>When you bought and some Informations about it</p>
-          </div>
-          <div className="secondary">
-            <h1>TESLA </h1>
-            <span>Price</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem veritatis, perspiciatis blanditiis odio obcaecati pariatur quos</p>
-          </div>
+          {/* {selectedCompanyArr.map((companyName, index) => {
+            const stock = userStocks.find(stock => stock.companyName === companyName);
+            return (
+              <div key={index} className="secondary">
+                <h1>{stock.companyName}</h1>
+                <span>Price: ${stock.price}</span>
+                <p>
+                  Bought: {stock.boughtAt} | Quantity: {stock.quantity} | {stock.moreInfo}
+                </p>
+              </div>
+            );
+          })} */}
         
         </div>
         

@@ -1,4 +1,3 @@
-// Search.tsx
 import React, { useContext, useState } from "react";
 import ThemeContext from "../context/ThemeContext";
 import StockContext from "../context/StockContext";
@@ -13,25 +12,31 @@ const Search = () => {
   const [input, setInput] = useState("");
   const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
   const [error, setError] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState(null);
 
   const updateBestMatches = async () => {
-    setBestMatches(mockSearchResults.result.filter((item) =>
-      item.description.toLowerCase().includes(input.toLowerCase())
-    ));
+    setBestMatches(
+      mockSearchResults.result.filter((item) =>
+        item.description.toLowerCase().includes(input.toLowerCase())
+      )
+    );
   };
 
   const clear = () => {
     setInput("");
     setBestMatches([]);
     setError(null);
+    setSelectedCompany(null);
   };
 
   const handleSelect = async (symbol) => {
     setStockSymbol(symbol);
     await fetchStockDetails(symbol);
     await fetchStockChart(symbol);
+    setSelectedCompany(symbol);
     clear();
   };
+
 
   return (
     <div
@@ -64,6 +69,8 @@ const Search = () => {
       >
         <FcSearch className="h-4 w-4 fill-gray-100" />
       </button>
+      
+      
       {input && bestMatches.length > 0 && (
         <SearchResults results={bestMatches} onSelect={handleSelect} />
       )}
