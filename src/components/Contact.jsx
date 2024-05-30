@@ -68,8 +68,8 @@ const Contact = () => {
   };
 
   return (
-    <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '2.5rem', overflow: 'hidden',padding:"0 25rem" }}>
-      <motion.div variants={slideIn("left", "tween", 0.2, 1)} style={{ flex: '0.5', backgroundColor: 'white', padding: '2rem', borderRadius: '1rem' }}>
+    <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '2.5rem', overflow: 'hidden',padding:"0 5rem" }}>
+      <motion.div variants={slideIn("left", "tween", 0.2, 1)} style={{ flex: '0.5', padding: '2rem', borderRadius: '1rem' }}>
         <p style={{ marginBottom: '1rem', fontWeight: 'bold', color: '#6b7280', textAlign: 'left' }}>GET IN TOUCH</p>
         <h3 style={{ fontWeight: '900', color: 'black', fontSize: '2rem', textAlign: 'left' }}>CONTACT</h3>
 
@@ -80,7 +80,7 @@ const Contact = () => {
               type='text'
               name='user_name'
               placeholder="Your name"
-              style={{ backgroundColor: 'white', padding: '1rem', color: 'black', borderRadius: '0.5rem', outline: 'none',  fontWeight: '500' }}
+              style={{ backgroundColor: 'white', padding: '1rem', color: 'black', borderRadius: '0.5rem', outline: 'none',  fontWeight: '500',border:'2px black solid' }}
             />
           </label>
           <label style={{ display: 'flex', flexDirection: 'column' }}>
@@ -89,7 +89,7 @@ const Contact = () => {
               type='email'
               name='user_email'
               placeholder="Your email"
-              style={{ backgroundColor: 'white', padding: '1rem', color: 'black', borderRadius: '0.5rem', outline: 'none', fontWeight: '500' }}
+              style={{ backgroundColor: 'white', padding: '1rem', color: 'black', borderRadius: '0.5rem', outline: 'none', fontWeight: '500',border:'2px black solid' }}
             />
           </label>
           <label style={{ display: 'flex', flexDirection: 'column' }}>

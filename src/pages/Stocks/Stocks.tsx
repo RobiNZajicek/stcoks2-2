@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Dashboard from '../../components/Dashboard.jsx'
+
 
 const Stocks = () => {
+
   return (
-    <div>Stocks</div>
+    <div>
+      
+      <Dashboard />
+
+
+  </div>
   )
 }
 

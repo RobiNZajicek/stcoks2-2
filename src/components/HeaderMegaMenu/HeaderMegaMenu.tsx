@@ -109,7 +109,7 @@ export function HeaderMegaMenu() {
     const userName = query.get('userName');
     const phoneNumber = query.get('phoneNumber');
     const gender = query.get('gender');
-
+  
     setUserK((prevUserK) => ({
       ...prevUserK,
       name: name || prevUserK.name,
@@ -118,10 +118,13 @@ export function HeaderMegaMenu() {
       lastname: lastname || prevUserK.lastname,
       money: money || prevUserK.money,
       userName: userName || prevUserK.userName,
-      phoneNumber:phoneNumber || prevUserK.phoneNumber,
+      phoneNumber: phoneNumber || prevUserK.phoneNumber,
       gender: gender || prevUserK.gender
     }));
-  }, [query]);
+  }, []); // Empty dependency array to run the effect only once
+  
+  
+  
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -155,7 +158,7 @@ export function HeaderMegaMenu() {
     <Link
       to={{
         pathname: collection.labelos,
-        search: `?fullname=${userK.fullname}&email=${userK.email}&name=${userK.name}&lastname=${userK.lastname}&money=${userK.money}&userName=${userK.userName},&phoneNumber=${userK.phoneNumber},&gender=${userK.gender}`,
+        search: `?fullname=${userK.fullname}&email=${userK.email}&name=${userK.name}&lastname=${userK.lastname}&money=${userK.money}&userName=${userK.userName}&phoneNumber=${userK.phoneNumber}&gender=${userK.gender}`,
       }}
       key={collection.label}
       className={classes.collectionLink}

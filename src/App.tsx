@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '@mantine/core/styles.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core';
@@ -13,10 +13,16 @@ import HeroText from './pages/Shop/HeroText';
 import Achievements from './pages/Achievements/Achievements';
 
 import { HeroBullets } from './pages/Home/HeroBullets';
+import ThemeContext from './context/ThemeContext';
+import StockContext from './context/StockContext';
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [stockSymbol, setStockSymbol] = useState("MSFT");
   return (
     <MantineProvider>
+      <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SharedLayout/>}>
@@ -32,6 +38,8 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
+      </StockContext.Provider>
+  </ThemeContext.Provider>
     </MantineProvider>
   )
 }

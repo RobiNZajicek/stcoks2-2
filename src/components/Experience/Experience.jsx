@@ -20,7 +20,8 @@ const ExperienceCard = ({ experience }) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         color: "black",
-        boxShadow:"1px 1px 30px 2px black"
+        boxShadow:"1px 1px 30px 2px black",
+       
       }}
       contentArrowStyle={{ borderRight: "10px solid  #228be6" }}
       date={<span style={{ fontWeight: 'bold', color: '#a4c7fe' }}>{experience.date}</span>}
@@ -44,12 +45,12 @@ const ExperienceCard = ({ experience }) => {
         </h2>
       </div>
 
-      <ul style={{ marginTop: '1px', marginLeft: '-10px', lineHeight: '2' }}>
+      <ul style={{ marginTop: '1px', marginLeft: '20px', lineHeight: '2' }}>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
             style={{
-              fontSize: '14px',
+              fontSize: '16px',
               fontWeight:'600',
             
               paddingLeft: '-10px',
@@ -77,7 +78,7 @@ const Experience = () => {
       </motion.div>
 
       <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', backgroundColor: 'white' }}>
-        <div className="blur">
+        <div className="bluros">
 
         </div>
         <VerticalTimeline className="vertical-timeline" >

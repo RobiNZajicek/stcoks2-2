@@ -36,11 +36,11 @@
 .vertical-timeline {
   
 }
-.blur{
+.bluros{
   background-color: #dbeafe; /* Equivalent to bg-blue-100 */
   position: absolute;
-  width: 900px;
-  height: 900px;
-  filter: blur(500px);
-  top: 140%;
+  width: 1500px;
+  height: 1500px;
+  filter: blur(400px);
+  top: 25%;
 }

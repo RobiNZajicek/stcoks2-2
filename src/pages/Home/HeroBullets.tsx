@@ -7,8 +7,11 @@ import ITs from '../../assets/Animation - 1716560128361.json'
 import Experience from '../../components/Experience/Experience.jsx'
 import Contact from "../../components/Contact.jsx"
 export function HeroBullets() {
+  const apiKey = import.meta.env.REACT_APP_API_KEY;
+  
   return (
     <div style={{display:'flex',flexDirection:'column',marginTop:'8.5rem'}}>
+      
     <Container  >
       <div className={classes.inner}>
         <div className={classes.content}>
@@ -16,6 +19,7 @@ export function HeroBullets() {
             A <span className={classes.highlight}>cutting-edge</span> Stocks <br /> app for Traders
           </Title>
           <Text c="dimmed" mt="md">
+            {apiKey}
             Experience the future of stock trading with our intuitive and powerful web application,
             designed to provide you with all the tools you need for successful trading.
           </Text>
@@ -59,8 +63,10 @@ export function HeroBullets() {
        
       </div>
     </Container>
+    <div className=''>
               <Experience/>
               <Contact/>
+              </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ const Profile = () => {
 
   return (
   
-    <div id='profile-container' className="container">
+    <div id='profile-container' className="containerk">
       <div class="main_bg"></div>
       <header>
         <div className="brandLogo">
@@ -86,7 +86,7 @@ const Profile = () => {
 
       <section className="userDetails card">
         <div className="userName">
-          <h1 style={{marginTop:'0rem',marginBottom:"0"}}>{user.fullname}</h1>
+          <h1 >{user.fullname}</h1>
           <div className="map">
             <i className="ri-map-pin-fill ri"></i>
             <span></span>
@@ -94,12 +94,12 @@ const Profile = () => {
           <p style={{marginTop:'0',marginBottom:"2rem"}}>Contact info</p>
         </div>
 
-        <div className="rank">
+        <div className="rank ">
         <li className="ssas">
               <h1 className="ssas">Phone number:</h1>
               <span style={{fontSize:'14px',fontWeight:400}} className="info">{user.phoneNumber}</span>
             </li>
-            <li className="ssas">
+            <li className="ssas mb-6">
               <h1 className="label">E-mail:</h1>
               <span   style={{fontSize:'14px',fontWeight:400}} className="info">{user.email}</span>
             </li>
@@ -172,7 +172,7 @@ const Profile = () => {
 
            
 
-            <li className="ssas">
+            <li className="ssas mb-6">
               <h1 className="label">Gender :</h1>
               <span className="info">{user.gender}</span>
             </li>

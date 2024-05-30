@@ -78,7 +78,7 @@
   }
   
   /* Main Container */
-  .container {
+  .containerk {
     position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -98,7 +98,10 @@
   .ssas{
     display: flex;
     flex-direction: row;
-    height: 45px;
+    height: 65px;
+    align-items: center;
+    
+  
   }
   
 
@@ -124,7 +127,7 @@ header {
 }
 
 /* ===== =====>>  Container Cards Css  <<===== =====  */
-.container .card {
+.containerk .card {
   background: var(--glass-bg);
   backdrop-filter: blur(3rem);
   border-radius: 0.5rem;
@@ -133,11 +136,11 @@ header {
 }
 
 /* ===== =====>>  Container Header/Navbar Css  <<===== =====  */
-.container header {
+.containerk header {
   padding: 0 var(--p-2-5);
 }
 
-.container header .brandLogo {
+.containerk header .brandLogo {
   display: flex;
   align-items: center;
 }
@@ -147,14 +150,14 @@ header {
   height: 3.5rem;
 }
 
-.container header .brandLogo span {
+.containerk header .brandLogo span {
   font-size: var(--xl-fs);
   font-weight: 700;
   margin-left: var(--m-0-5);
 }
 
 /* ===== =====>>  User Main-Profile Css Start  <<===== ===== */
-.container .userProfile {
+.containerk .userProfile {
   position: relative;
   display: flex;
   justify-content: center;
@@ -167,14 +170,14 @@ header {
   
 }
 
-.container .userProfile .profile figure img {
+.containerk .userProfile .profile figure img {
   width: 18rem;
   height: 15rem;
   border-radius: 50%;
 }
 
 /* ===== =====>>  Work & Skills Css Start  <<===== ===== */
-.container .work_skills {
+.containerk .work_skills {
   padding: var(--p-1-5);
   height: 670px;
   
@@ -487,7 +490,7 @@ header {
     }
   
     /* ===== =====>>  Container Css Start  <<===== ===== */
-    .container {
+    .containerk {
       grid-template-columns: 1fr;
       grid-template-areas:
         "header"
@@ -504,7 +507,7 @@ header {
     }
   
     /* ===== =====>>  Container Card Css Start  <<===== ===== */
-    .container .card {
+    .containerk .card {
       backdrop-filter: none;
     }
   
@@ -512,19 +515,19 @@ header {
       margin-bottom: 3rem;
     }
   
-    .container::before,
-    .container::after {
+    .containerk::before,
+    .containerk::after {
       display: none;
     }
   
     /* ===== =====>>  Header/Navbar Css Start  <<===== ===== */
-    .container header {
+    .containerk header {
       padding: 2.5rem;
     } 
   }
   
   @media screen and (max-width: 500px) {
-    .container {
+    .containerk {
       width: 100%;
       overflow: initial;
     }
