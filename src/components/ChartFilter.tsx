@@ -1,5 +1,5 @@
 import React from "react";
-
+//TypeScript types for variables
 interface ChartFilterProps {
   text: string;
   active: boolean;

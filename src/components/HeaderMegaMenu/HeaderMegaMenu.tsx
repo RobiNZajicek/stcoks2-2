@@ -31,7 +31,7 @@ import {
 } from '@tabler/icons-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import classes from './HeaderMegaMenu.module.css';
-
+// Mock data for the mega menu
 const mockdata = [
   {
     icon: IconCode,
@@ -64,7 +64,7 @@ const mockdata = [
     description: 'Combusken battles with the intensely hot flames it spews',
   },
 ];
-
+//Links for Navbar
 const collections = [
   {  label: 'Profile', labelos: '/' },
   {  label: 'Stocks', labelos: 'Stocks' },
@@ -85,7 +85,7 @@ export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
-
+//logic for variables
   const [userK, setUserK] = useState({
     name: '',
     email: '',
@@ -125,7 +125,7 @@ export function HeaderMegaMenu() {
   
   
   
-
+//maping the colletions for the navbar
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">

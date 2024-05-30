@@ -7,7 +7,7 @@ import Header from "./Header";
 import StockContext from "../context/StockContext";
 import { fetchStockDetails, fetchQuote, fetchHistoricalData } from "../utils/api/stock-api";
 
-
+//Dashboard component for the whole stockPage
 const Dashboard = () => {
   const { darkMode } = useContext(ThemeContext);
   const { stockSymbol } = useContext(StockContext);
@@ -16,12 +16,12 @@ const Dashboard = () => {
   const [historicalData, setHistoricalData] = useState([]);
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedCompanyArr, setSelectedCompanyArr] = useState([]);
-
+    //function for buying
   const handleBuy = (companyName) => {
     setSelectedCompanyArr(prevState => [...prevState, companyName]);
   
   };
-  
+  //fetching the data for details and more
   useEffect(() => {
     const updateStockDetails = async () => {
       try { 
@@ -32,7 +32,7 @@ const Dashboard = () => {
         console.log(error);
       }
     };
-
+//fetching the data for details and more
     const updateQuote = async () => {
       try {
         const result = await fetchQuote(stockSymbol);
@@ -42,7 +42,7 @@ const Dashboard = () => {
         console.log(error);
       }
     };
-
+//fetching the data for details and more
     const updateHistoricalData = async () => {
       try {
         const result = await fetchHistoricalData(stockSymbol);

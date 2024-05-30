@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import ThemeIcon from "./ThemeIcon";
-
+//types for variables
 interface HeaderProps {
   name: string;
 }

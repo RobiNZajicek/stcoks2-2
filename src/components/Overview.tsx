@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-
+//types for variables
 interface OverviewProps {
   symbol: string;
   price: number;

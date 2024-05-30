@@ -7,13 +7,13 @@ import StockContext from "../context/StockContext";
 import { fetchHistoricalData } from "../utils/api/stock-api";
 import { convertUnixTimestampToDate } from "../utils/helpers/date-helper";
 import { chartConfig } from "../constants/config";
-
+//chart Component
 const Chart = () => {
   const [filter, setFilter] = useState("1W");
   const { darkMode } = useContext(ThemeContext);
   const { stockSymbol } = useContext(StockContext);
   const [data, setData] = useState([]);
-
+  //fatching the data for the graph
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,7 +26,7 @@ const Chart = () => {
 
     fetchData();
   }, [stockSymbol, filter]);
-
+    //formating the data for the graph
   const formatData = (data) => {
     if (!Array.isArray(data.c)) {
       return [];
@@ -38,7 +38,7 @@ const Chart = () => {
       };
     });
   };
-
+//returning chartFilter
   return (
     <Card>
       <ul className="flex absolute top-2 right-2 z-40">

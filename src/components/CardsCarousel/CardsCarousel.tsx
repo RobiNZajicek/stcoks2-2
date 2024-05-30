@@ -4,11 +4,11 @@ import { Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core'
 import classes from './CardsCarousel.module.css';
 
 interface CardProps {
-  image: string;
-  title: string;
-  category: string;
+  image: string;  // URL of the card image
+  title: string;  // Title of the card  
+  category: string; // Category of the card
 }
-
+// Component for individual card
 function Card({ image, title, category }: CardProps) {
   return (
     <Paper
@@ -32,7 +32,7 @@ function Card({ image, title, category }: CardProps) {
     </Paper>
   );
 }
-
+// Data for carousel cards
 const data = [
   {
     image:
@@ -71,7 +71,7 @@ const data = [
     category: 'nature',
   },
 ];
-
+// Return the carousel with slides
 export function CardsCarousel() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: 48em)`);

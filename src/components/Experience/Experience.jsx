@@ -7,11 +7,12 @@ import { motion } from "framer-motion";
 import './Experience.css';
 import "react-vertical-timeline-component/style.min.css";
 
-
+// Importing necessary data and utilities
 import { experiences } from "../../constants";
 import { SectionWrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion.js";
 
+// Component for each experience card
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -65,6 +66,7 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
+// Main Experience component
 const Experience = () => {
   return (
     <section style={{ margin: '0 auto', padding: '40px 16px', maxWidth: '1200px', backgroundColor: 'white' }}>
