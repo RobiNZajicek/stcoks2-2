@@ -636,17 +636,17 @@ export const fetchStockDetails = async (symbol: string) => {
   return generateMockCompanyDetails(symbol);
 };
 
-export const fetchQuote = async (symbol: string) => {
+export const fetchQuote = async () => {
   // Simulate API call
   return { c: Math.floor(Math.random() * 500), pc: Math.floor(Math.random() * 500) }; // Random current and previous close prices
 };
 
-export const fetchHistoricalData = async (symbol: string, resolution: string, from: number, to: number) => {
+export const fetchHistoricalData = async (symbol: string,) => {
   // Simulate API call
   return generateMockHistoricalData(symbol);
 };
 
-export const searchSymbol = async (query: string) => {
+export const searchSymbol = async () => {
   // Simulate API call
   return {
     count: 32, // Changed to return 32 results

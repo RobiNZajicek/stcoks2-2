@@ -1,6 +1,6 @@
-import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
+import {  Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
-import image from './image.svg';
+
 import classes from './HeroBullets.module.css';
 import Lottie from 'lottie-react';
 import ITs from '../../assets/Animation - 1716560128361.json'

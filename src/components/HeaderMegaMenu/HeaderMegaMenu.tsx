@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import {
   HoverCard,
   Group,
@@ -29,7 +29,7 @@ import {
   IconCoin,
   IconChevronDown,
 } from '@tabler/icons-react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link,  useLocation } from 'react-router-dom';
 import classes from './HeaderMegaMenu.module.css';
 // Mock data for the mega menu
 const mockdata = [
@@ -150,6 +150,8 @@ export function HeaderMegaMenu() {
     window.location.href = 'http://localhost:8080/login';
   };
   const handleDelete = () => {
+    console.log(loading);
+    
     setLoading(true);
     // Redirect to localhost:8080/login
     window.location.href = 'http://localhost:8080/registration';
