@@ -1,6 +1,6 @@
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core';
+import { Paper, Text, Title, Button, rem } from '@mantine/core';
 import classes from './CardsCarousel.module.css';
 
 interface CardProps {
@@ -73,7 +73,7 @@ const data = [
 ];
 // Return the carousel with slides
 export function CardsCarousel() {
-  const theme = useMantineTheme();
+  
   const mobile = useMediaQuery(`(max-width: 48em)`);
 
   const slides = data.map((item) => (

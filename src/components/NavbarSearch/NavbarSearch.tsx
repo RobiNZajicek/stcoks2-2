@@ -10,10 +10,10 @@ import {
   ActionIcon,
   Tooltip,
   rem,
-  useMantineTheme,
+
 } from '@mantine/core';
 import { Link, useLocation } from 'react-router-dom';
-import { useDisclosure } from '@mantine/hooks';  
+
 import { IconBulb, IconUser, IconCheckbox, IconSearch, IconPlus } from '@tabler/icons-react';
 // import { UserButton } from '../UserButton/UserButton';
 import { useEffect } from 'react';
@@ -21,16 +21,13 @@ import cx from 'clsx';
 import classes from './NavbarSearch.module.css';
 import {
 IconLogout,
-IconHeart,
-IconStar,
-IconMessage,
+
 IconSettings,
 IconPlayerPause,
 IconTrash,
 IconSwitchHorizontal,
 IconChevronDown,
 } from '@tabler/icons-react';
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 const links = [
   { icon: IconBulb, label: 'Activity', notifications: 3 },
@@ -93,9 +90,9 @@ export function NavbarSearch() {
   }, [query]);
   
  
-  const [opened, { toggle }] = useDisclosure(false);
+
   const [userMenuOpened, setUserMenuOpened] = useState(false);
-  const theme = useMantineTheme();
+
   const mainLinks = links.map((link) => (
     <UnstyledButton key={link.label} className={classes.mainLink}>
       <div className={classes.mainLinkInner}>
