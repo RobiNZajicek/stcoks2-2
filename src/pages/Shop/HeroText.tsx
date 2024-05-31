@@ -1,7 +1,7 @@
 import { Title, Text, Button, Container } from '@mantine/core';
 import { Dots } from './Dots';
 import classes from './HeroText.module.css';
-import Dokumentace from '../../assets/Dokumentace_vzor2 (3).pdf'
+import Dokumentace from '../../assets/DOKUMENTACE.pdf'
 export function HeroText() {
   return (
     <Container className={classes.wrapper} size={1400}>
@@ -31,9 +31,9 @@ export function HeroText() {
             size="lg"
             variant="default"
             color="gray"
-            onClick={() => window.open('https://github.com/RobiNZajicek/stcoks2-2.git', '_blank')}
+            onClick={() => window.open('https://github.com/RobiNZajicek/stcoks2-2', '_blank')}
           >
-            View on GitHub
+            View front-end code
           </Button>
           <Button
             className={classes.control}
@@ -41,6 +41,15 @@ export function HeroText() {
             
           >
         <a href={Dokumentace} download="" style={{color:'white'}}>Read the Documentation</a> 
+          </Button>
+          <Button
+            className={classes.control}
+            size="lg"
+            variant="default"
+            color="gray"
+            onClick={() => window.open('https://github.com/RobiNZajicek/backend2.git', '_blank')}
+          >
+            View back-end code
           </Button>
         </div>
       </div>
