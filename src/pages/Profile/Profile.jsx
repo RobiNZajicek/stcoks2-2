@@ -9,6 +9,8 @@ import { Button } from '@mantine/core';
 
 const Profile = () => {
   const [user, setUser] = useState({ fullname: '', email: '', name: '', lastname: '', money: 0, userName: '', phoneNumber: '', gender: '' });
+  const [initialMoney, setInitialMoney] = useState(0); // Store initial money separately
+  const [sell, setSell] = useState(false); // Store initial money separately
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
@@ -21,19 +23,24 @@ const Profile = () => {
     const email = query.get('email');
     const name = query.get('name');
     const lastname = query.get('lastname');
-    const money = query.get('money');
+    const initialMoneyValue = parseFloat(query.get('money') || 0); // Parse money as a float, default to 0 if not provided
     const userName = query.get('userName');
     const phoneNumber = query.get('phoneNumber');
     const gender = query.get('gender');
 
-    if (fullname || email || name || lastname || money || userName || phoneNumber || gender) {
-      setUser({ fullname, email, name, lastname, money, userName, phoneNumber, gender });
-    }
-  }, [query]);
+    // Calculate the total money based on the initial value and the sum of all stock prices
+    const totalMoney = initialMoneyValue - boughtStocks.reduce((total, stock) => total + parseFloat(stock.price), 0);
 
-  const handleSellStock = (price) => {
-    const updatedMoney = parseFloat(user.money) + parseFloat(price);
+    setUser({ fullname, email, name, lastname, money: totalMoney.toFixed(2), userName, phoneNumber, gender });
+    setInitialMoney(initialMoneyValue);
+  }, [query, boughtStocks]);
+
+  const handleSellStock = (stock) => {
+    // Calculate the updated money by subtracting the price of the sold stock
+    const updatedMoney = parseFloat(user.money) + parseFloat(stock.price); // Add the sold stock price to user's money
     setUser({ ...user, money: updatedMoney.toFixed(2) });
+    removeStock(stock.name);
+    setSell(true)
   };
 
   const Price = () => {
@@ -44,6 +51,23 @@ const Profile = () => {
     }
   };
 
+  useEffect(() => {
+    const updateStockPrices = () => {
+      boughtStocks.forEach(stock => {
+        const randomChange = Math.floor(Math.random() * (300 - 50 + 1) + 50); // Random change between 50 and 300
+        const isPositiveChange = Math.random() < 0.5; // Randomly determine if the change is positive or negative
+        const newPrice = isPositiveChange ? stock.price + randomChange : stock.price - randomChange; // Calculate new price
+
+        // Update the stock price
+        stock.price = newPrice;
+      });
+    };
+
+    const intervalId = setInterval(updateStockPrices, 4000); // Update prices every 4 seconds
+
+    return () => clearInterval(intervalId); // Clean up the interval
+  }, [boughtStocks]); // Trigger effect when boughtStocks changes
+
   return (
     <div id='profile-container' className='containerk'>
       <div class='main_bg'></div>
@@ -53,7 +77,7 @@ const Profile = () => {
             <img src={Logo} alt="logo" width="100px" height="100px" />
           </figure> */}
           <span>
-            USER Proflie<br />
+            USER Profile<br />
             <span style={{ color: 'black', fontSize: '15px' }}>{user.fullname}</span>
           </span>
         </div>
@@ -74,9 +98,13 @@ const Profile = () => {
             {boughtStocks.map((stock, index) => (
               <div className='flex flex-row items-center gap-4' key={index}>
                 <li className='font-bold text-black text-xl mt-2 mb-2' style={{ '--i': 0 }}>
-                  {stock.name} - ${stock.price}
+                  {stock.name} - ${stock.price.toFixed(2)}
                 </li>
-                <Button onPointerEnter={Price} className='bg-red-600 h-8' onClick={() => { removeStock(stock.name); handleSellStock(stock.price); }}>
+                <Button
+                  onPointerEnter={Price}
+                  className='bg-red-600 h-8'
+                  onClick={() => handleSellStock(stock)} // Pass the stock object to handleSellStock function
+                >
                   Sell
                 </Button>
               </div>
@@ -185,7 +213,8 @@ const Profile = () => {
           <ul style={{ margin: '0', paddingLeft: '0' }}>
             <li style={{ padding: '1rem', paddingLeft: '0' }} className='ssas'>
               <h1 style={{ margin: '0', paddingLeft: '0' }}>Money:</h1>
-              <span style={{ margin: '0', marginLeft: '10px', marginTop: '3.5px' }}>{user.money}</span>
+              {sell ? <span>{user.money * 1.02}</span> : <span>{user.money * 1}</span>}
+
             </li>
           </ul>
         </div>
@@ -195,4 +224,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
